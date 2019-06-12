@@ -78,7 +78,17 @@
                                         <img class="center-fit" src='data/waitress.jpg' style = "padding-top:5%;">
                                         </div>
                                     </div>                                      
-                                    <div class = "col-lg-6 col-md-6 col-sm-6 col-xs-12" >                                          
+                                    <div class = "col-lg-6 col-md-6 col-sm-6 col-xs-12" >
+                                        <form>
+                                            Total bill: <input type="text" name="total_bill"><br>
+                                            Select desired tip percentage:<br>
+                                            <input type="radio" name="tip_percent" value=10>10 % of total bill<br>
+                                            <input type="radio" name="tip_percent" value=15>15 % of total bill<br>
+                                            <input type="radio" name="tip_percent" checked value=18>18 % of total bill<br>
+                                            <input type="radio" name="tip_percent" value=20>20 % of total bill<br>
+                                            <input type="radio" name="tip_percent">Other (%):  <input type="text" name="other_persent">
+                                        </form>
+
                                     </div>                                 
                                 </div>  
                             </div>
