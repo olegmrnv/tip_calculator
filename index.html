@@ -1,104 +1,131 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <title>Tip Calculator</title>        
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-        <style>
-        
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Tip Calculator</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <style>
         html,
         body {
-        margin:0;
-        padding:0;
-        height:100%;
+            margin: 0;
+            padding: 0;
+            height: 100%;
         }
+
         #container {
-        min-height:100%;
-        position:relative;
+            min-height: 100%;
+            position: relative;
         }
+
         #header {
-        background:#343A40;
-        padding:10px;
+            background: #343A40;
+            padding: 10px;
         }
+
         #body {
-        padding:10px;
-        padding-bottom:50px;   /* Height of the footer */
+            padding: 10px;
+            padding-bottom: 50px;
+            /* Height of the footer */
         }
+
         #footer {
-        position:absolute;
-        bottom:0;
-        width:100%;
-        height:50px;   /* Height of the footer */
-        background:#343A40;
-        
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 50px;
+            /* Height of the footer */
+            background: #343A40;
+
         }
+
         h4 {
-        color:white;    
+            color: white;
         }
+
         * {
-        margin: 0;
-        padding: 0;
+            margin: 0;
+            padding: 0;
         }
+
         .imgbox {
-        display: grid;
-        height: 100%;
+            display: grid;
+            height: 100%;
         }
+
         .center-fit {
-        max-width: 100%;
-        max-height: 80vh;
-        margin: auto;
+            max-width: 100%;
+            max-height: 80vh;
+            margin: auto;
         }
+
         p {
-            color:white;            
-            position:absolute;
-            bottom:0;
-            left:46%;
-            
-            
-        }   
-        
-        
-        </style>
-    </head>
-    <body>
-            
-        
-        <div id="container">
-                    <div id="header"><h4>Tip Calculator</h2></div>
-                    <div id="body">
+            color: white;
+            position: absolute;
+            bottom: 0;
+            left: 46%;
+
+
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <div id="container">
+        <div id="header">
+            <h4>Tip Calculator</h2>
+        </div>
+        <div id="body">
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                        <div class="imgbox">
+                            <img class="center-fit" src='data/waitress.jpg' style="padding-top:5%;">
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                        <form>
+                            Total bill: <input type="text" name="total_bill"><br>
+                            Select desired tip percentage:<br>
+                            <input type="radio" name="tip_percent" id="ten" value=10>10 % of total bill<br>
+                            <input type="radio" name="tip_percent" id="fifteen" value=15>15 % of total bill<br>
+                            <input type="radio" name="tip_percent" id="eighteen" checked value=18>18 % of total bill<br>
+                            <input type="radio" name="tip_percent" id="twenty" value=20>20 % of total bill<br>
+                            <input type="radio" name="tip_percent" id="other">Other (%): <input type="text" id="other_persent" disabled><br>
+
+                            <input type="checkbox" id="split">Split bill between several guests<br>
+                            <input type="text" id="numberOFpayes" placeholder="Number of people" disabled><br>
                             
-                            <div class = "container">
-                                <div class = "row">
-                                    <div class = "col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                        <div class="imgbox">
-                                        <img class="center-fit" src='data/waitress.jpg' style = "padding-top:5%;">
-                                        </div>
-                                    </div>                                      
-                                    <div class = "col-lg-6 col-md-6 col-sm-6 col-xs-12" >
-                                        <form>
-                                            Total bill: <input type="text" name="total_bill"><br>
-                                            Select desired tip percentage:<br>
-                                            <input type="radio" name="tip_percent" value=10>10 % of total bill<br>
-                                            <input type="radio" name="tip_percent" value=15>15 % of total bill<br>
-                                            <input type="radio" name="tip_percent" checked value=18>18 % of total bill<br>
-                                            <input type="radio" name="tip_percent" value=20>20 % of total bill<br>
-                                            <input type="radio" name="tip_percent">Other (%):  <input type="text" name="other_persent">
-                                        </form>
-
-                                    </div>                                 
-                                </div>  
-                            </div>
-                              
-
+                        </form>
 
                     </div>
-                    <div id="footer"><p>Oleg Mironov</p></div>
-                 </div>
+                </div>
+            </div>
+
+
+
+        </div>
+        <div id="footer">
+            <p>Oleg Mironov</p>
+        </div>
+    </div>
+    <!-- <script>
         
-        <script src="" async defer></script>
-    </body>
+        
+    </script> -->
+
+    <script src="js/form_fields.js" async defer></script>
+    
+</body>
+
 </html>
+
+
+
