@@ -4,11 +4,21 @@ function tip_calculator() {
 
 
     // Getting value of total bill 
-    var bill = d3.select("#total_bill");
-    var bill_amount = bill.node().value;
+
+    var bill_amount = d3.select("#total_bill").node().value;
+    var percent = d3.select('input[name="tip_percent"]:checked').node().value
+    if (percent == 0) { percent = d3.select("#other_persent").node().value }
+
+
     // checking if bill needs to be split between several guests
-    // var guestNumber = d3.select("");
+    var numberOFpayes = 1;
+    if (document.getElementById("split").checked){
+        numberOFpayes = d3.select("#numberOFpayes").node().value;
+    }
+    
     console.log(bill_amount);
+    console.log(percent);
+    console.log(numberOFpayes);
 
     // main function that will calculate tip amount
 

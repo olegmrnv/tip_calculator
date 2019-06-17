@@ -1,5 +1,6 @@
 document.getElementById('split').onchange = function () {
     document.getElementById('numberOFpayes').disabled = !this.checked;
+    document.getElementById('numberOFpayes').value = "";
 };
 
 document.getElementById('other').onchange = function () {
