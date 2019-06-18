@@ -22,3 +22,6 @@ document.getElementById('fifteen').onchange = function () {
 document.getElementById('ten').onchange = function () {
     document.getElementById('other_persent').disabled = true;
 };
+
+document.getElementById('total_bill').focus();
+document.getElementById('total_bill').select();
