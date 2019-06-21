@@ -1,3 +1,4 @@
+// main function which will be launched when button clicked or Enter pressed
 function tip_calculator() {
     d3.event.preventDefault();
 
@@ -32,5 +33,5 @@ function tip_calculator() {
 
 
 
-
+// adding event listener
 d3.select(".btn-dark").on("click", tip_calculator);
