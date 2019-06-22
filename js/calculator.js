@@ -13,15 +13,18 @@ function tip_calculator() {
 
     // checking if bill needs to be split between several guests
     var numberOFpayes = 1;
-    if (document.getElementById("split").checked){
+    if (document.getElementById("split").checked) {
         numberOFpayes = d3.select("#numberOFpayes").node().value;
     }
-    
+
     console.log(bill_amount);
     console.log(percent);
     console.log(numberOFpayes);
 
     // main function that will calculate tip amount
+    if (bill_amount <= 0 || percent <= 0 || numberOFpayes < 1) {
+        alert("Please fill in requared fields");
+    }
 
     function to_tip(totalCost, splitBetween) {
 

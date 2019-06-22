@@ -1,11 +1,21 @@
+h4 {
+    color: white;
+}
+
 #bill_error_text {
     color: red;
     font-size: 12px;
     margin-left: 65px;
 }
 
+#percent_error_text,
+#guestNumber_error_text {
+    color: red;
+    font-size: 12px;
+}
+
 #other_persent {
-    width: 60px;
+    width: 70px;
 }
 
 html,
@@ -38,10 +48,6 @@ body {
     height: 50px;
     /* Height of the footer */
     background: #343A40;
-}
-
-h4 {
-    color: white;
 }
 
 * {

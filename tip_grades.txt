@@ -1,5 +1,0 @@
-20.01 +		incredible tipper
-18.00 - 20.00	great tipper
-15.00 - 17.99 	good tipper
-10.00 - 14.99	okay tipper
-0 - 9.99	poor tipper
