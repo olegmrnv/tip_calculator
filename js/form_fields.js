@@ -71,7 +71,7 @@ function valCheckGuestNumber() {
     if (GuestNumver == 0) {
         this.style.border = "2px solid red";
         document.getElementById('guestNumber_error_text').innerHTML = "At least one person has to pay the bill";
-    } else if (!Number.isInteger(GuestNumver)) {
+    } else if (!Number.isInteger(GuestNumver) || GuestNumver < 0) {
         this.style.border = "2px solid red";
         document.getElementById('guestNumber_error_text').innerHTML = "Number of guests entered incorectly";
     } else {

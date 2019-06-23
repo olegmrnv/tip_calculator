@@ -20,13 +20,18 @@ function tip_calculator() {
     console.log(bill_amount);
     console.log(percent);
     console.log(numberOFpayes);
+    var to_tip;
 
-    // main function that will calculate tip amount
-    if (bill_amount <= 0 || percent <= 0 || numberOFpayes < 1) {
+    // making sure all values entered correctly and calculating tips
+    if (bill_amount <= 0 || percent < 0 || numberOFpayes < 1) {
         alert("Please fill in requared fields");
-    }
-
-    function to_tip(totalCost, splitBetween) {
+    } else {
+        to_tip = (bill_amount / 100 * percent) / numberOFpayes;
+        if (numberOFpayes > 1) {
+            d3.select("#tip_div").text("Tips for your waiter: $ " + to_tip.toFixed(2) + " per payer");
+        } else {
+            d3.select("#tip_div").text("Tips for your waiter: $ " + to_tip.toFixed(2));
+        }
 
     }
 
