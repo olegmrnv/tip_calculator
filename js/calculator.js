@@ -20,16 +20,31 @@ function tip_calculator() {
     // declaring variable for final tip result
     var to_tip;
 
+    // func to display bonus badge if tipper decide to leave higher tip percentage
+    function badge() {
+        d3.select("#badge").selectAll("img").remove();
+        if (percent >= 15 && percent < 20) {
+            d3.select("#badge").append("img").attr("src", "data/good_tipper.jpg");
+        } else if (percent >= 20) {
+            d3.select("#badge").append("img").attr("src", "data/awesome_tipper.jpg");
+        } else {
+            d3.select("#badge").selectAll("img").remove();
+        }
+    }
+
     // making sure all values entered correctly, displaying error if not 
-    // calculating tips and rounding to 2 decimal places
+    // calculating tips and rounding to 2 decimal places, calling badge function
     if (bill_amount <= 0 || percent < 0 || numberOFpayes < 1) {
         alert("Please fill in requared fields");
     } else {
         to_tip = (bill_amount / 100 * percent) / numberOFpayes;
         if (numberOFpayes > 1) {
             d3.select("#tip_div").text("Tips for your waiter: $ " + to_tip.toFixed(2) + " per payer");
+            badge();
         } else {
             d3.select("#tip_div").text("Tips for your waiter: $ " + to_tip.toFixed(2));
+            badge();
+
         }
 
     }

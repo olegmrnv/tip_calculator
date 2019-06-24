@@ -10,6 +10,7 @@ document.getElementById('split').onchange = function() {
 // if "Other" radio button selected relative input field becomes active
 document.getElementById('other').onchange = function() {
     document.getElementById('other_persent').disabled = !this.checked;
+    document.getElementById('other_persent').value = 0;
 };
 
 // defining function what should happen when "Other" radio button is not selected any longer
