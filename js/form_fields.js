@@ -2,27 +2,26 @@
 document.getElementById('split').onchange = function() {
     document.getElementById('numberOFpayes').disabled = !this.checked;
     document.getElementById('numberOFpayes').value = "";
+    document.getElementById('numberOFpayes').style.border = "";
+    document.getElementById('guestNumber_error_text').innerHTML = "&nbsp;";
 };
 
 document.getElementById('other').onchange = function() {
     document.getElementById('other_persent').disabled = !this.checked;
 };
 
-document.getElementById('twenty').onchange = function() {
+// defining function what should happen when "Other" radio button is not selected any longer
+function leaveOtherRadio() {
+    document.getElementById('percent_error_text').innerHTML = "&nbsp;";
     document.getElementById('other_persent').disabled = true;
-};
+    document.getElementById('other_persent').style.border = "";
+    document.getElementById('other_persent').value = "";
+}
 
-document.getElementById('eighteen').onchange = function() {
-    document.getElementById('other_persent').disabled = true;
-};
-
-document.getElementById('fifteen').onchange = function() {
-    document.getElementById('other_persent').disabled = true;
-};
-
-document.getElementById('ten').onchange = function() {
-    document.getElementById('other_persent').disabled = true;
-};
+document.getElementById('twenty').onchange = leaveOtherRadio;
+document.getElementById('eighteen').onchange = leaveOtherRadio;
+document.getElementById('fifteen').onchange = leaveOtherRadio;
+document.getElementById('ten').onchange = leaveOtherRadio;
 
 // setting cursor to filed Total Bill
 document.getElementById('total_bill').focus();
