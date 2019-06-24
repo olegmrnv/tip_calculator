@@ -8,6 +8,7 @@ document.getElementById('split').onchange = function() {
 };
 
 // if "Other" radio button selected relative input field becomes active
+// setting value to zero, otherwise listener doesn't work properly
 document.getElementById('other').onchange = function() {
     document.getElementById('other_persent').disabled = !this.checked;
     document.getElementById('other_persent').value = 0;
@@ -32,17 +33,17 @@ document.getElementById('total_bill').focus();
 document.getElementById('total_bill').select();
 
 
-// ##########################
-//   ERROR HANDLING SECTION / Field Validation
-// ##########################
+// ############################################
+//  ERROR HANDLING SECTION / FIELD VALIDATION
+// ############################################
 
 var infoIScorrect = true;
 
 // adding listener to "Total bill" field and checking if number entered properly when user navigates away
-document.getElementsByName("t_bill")[0].addEventListener('change', doThing);
+document.getElementsByName("t_bill")[0].addEventListener('change', billCheck);
 
 // if number of Total bill was not entered correctly we highlighting box in red and showing error in red
-function doThing() {
+function billCheck() {
     if (this.value <= 0) {
         this.style.border = "2px solid red";
         document.getElementById('bill_error_text').innerHTML = "Total bill should be above $0";
@@ -51,7 +52,6 @@ function doThing() {
         document.getElementById('bill_error_text').innerHTML = "&nbsp;";
         this.style.border = "";
     }
-
 }
 
 // Checking if Other percent field entered correctly
