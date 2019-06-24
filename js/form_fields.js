@@ -1,4 +1,5 @@
-// several functions that will disable or enable optional fields such as "Other tip persanage" and "split bill"
+// Listener for checkbox, if selected field becomes active
+// if deselected, field clears as well as all custom warnings and field becomes not active 
 document.getElementById('split').onchange = function() {
     document.getElementById('numberOFpayes').disabled = !this.checked;
     document.getElementById('numberOFpayes').value = "";
@@ -6,24 +7,26 @@ document.getElementById('split').onchange = function() {
     document.getElementById('guestNumber_error_text').innerHTML = "&nbsp;";
 };
 
+// if "Other" radio button selected relative input field becomes active
 document.getElementById('other').onchange = function() {
     document.getElementById('other_persent').disabled = !this.checked;
 };
 
 // defining function what should happen when "Other" radio button is not selected any longer
+// here we clearing field, removing possible warnings and disabling field
 function leaveOtherRadio() {
     document.getElementById('percent_error_text').innerHTML = "&nbsp;";
     document.getElementById('other_persent').disabled = true;
     document.getElementById('other_persent').style.border = "";
     document.getElementById('other_persent').value = "";
 }
-
+// assigning this function to all remaining radio buttons
 document.getElementById('twenty').onchange = leaveOtherRadio;
 document.getElementById('eighteen').onchange = leaveOtherRadio;
 document.getElementById('fifteen').onchange = leaveOtherRadio;
 document.getElementById('ten').onchange = leaveOtherRadio;
 
-// setting cursor to filed Total Bill
+// setting cursor to field Total Bill
 document.getElementById('total_bill').focus();
 document.getElementById('total_bill').select();
 
@@ -31,10 +34,13 @@ document.getElementById('total_bill').select();
 // ##########################
 //   ERROR HANDLING SECTION / Field Validation
 // ##########################
+
 var infoIScorrect = true;
-// Checking if Total Bill field entered correctly
+
+// adding listener to "Total bill" field and checking if number entered properly when user navigates away
 document.getElementsByName("t_bill")[0].addEventListener('change', doThing);
 
+// if number of Total bill was not entered correctly we highlighting box in red and showing error in red
 function doThing() {
     if (this.value <= 0) {
         this.style.border = "2px solid red";
@@ -50,6 +56,7 @@ function doThing() {
 // Checking if Other percent field entered correctly
 document.getElementById("other_persent").addEventListener('change', valCheckPercentage);
 
+// Other percentage can be zero but cannot be negative, checking that and displaying error if any when user navigates away
 function valCheckPercentage() {
     if (this.value < 0) {
         this.style.border = "2px solid red";
@@ -64,6 +71,7 @@ function valCheckPercentage() {
 // Checking if Number of Guests field entered correctly
 document.getElementById("numberOFpayes").addEventListener('change', valCheckGuestNumber);
 
+// Number of guests can be only integer and cannot be 0, checking all that and displaying error in red if any
 function valCheckGuestNumber() {
     var GuestNumver = parseFloat(this.value);
 
