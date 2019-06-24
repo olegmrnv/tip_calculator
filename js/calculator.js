@@ -24,9 +24,21 @@ function tip_calculator() {
     function badge() {
         d3.select("#badge").selectAll("img").remove();
         if (percent >= 15 && percent < 20) {
-            d3.select("#badge").append("img").attr("src", "data/good_tipper.jpg");
+            d3.select("#badge")
+                .append("img")
+                .attr("src", "data/good_tipper.jpg")
+                .style("opacity", 0.0)
+                .transition()
+                .duration(1500)
+                .style("opacity", 1.0);
         } else if (percent >= 20) {
-            d3.select("#badge").append("img").attr("src", "data/awesome_tipper.jpg");
+            d3.select("#badge")
+                .append("img")
+                .attr("src", "data/awesome_tipper.jpg")
+                .style("opacity", 0.0)
+                .transition()
+                .duration(1500)
+                .style("opacity", 1.0);
         } else {
             d3.select("#badge").selectAll("img").remove();
         }
