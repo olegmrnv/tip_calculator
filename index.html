@@ -5,10 +5,12 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Tip Calculator</title>
+    <!-- Adding D3 library which will be used for animation and object selecting -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.13.0/d3.min.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    <!-- Adding Bootstrap to nicely structure front end -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!-- My personal styles to make site look better -->
     <link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -20,15 +22,17 @@
             <h4>Tip Calculator</h4>
         </div>
         <div id="body">
-
             <div class="container">
                 <div class="row">
                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                         <div class="imgbox">
+                            <!-- adding image of waitress, it is resizeble with smaller screens -->
                             <img class="center-fit" src='data/waitress.jpg' style="padding-top:5%;">
                         </div>
                     </div>
+                    <!-- Defining where form field will be located -->
                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                        <!-- creating submittion form -->
                         <form>
                             <br> Total bill: <input type="number" id="total_bill" name="t_bill" min=0 onkeydown="return event.keyCode !== 69" /><br>
                             <div id="bill_error_text"> &nbsp;</div><br> Select desired tip percentage:<br>
@@ -38,13 +42,11 @@
                             <input type="radio" name="tip_percent" id="twenty" value=20>20 % of total bill<br>
                             <input type="radio" name="tip_percent" id="other" value=0>Other (%): <input type="number" id="other_persent" min=0 disabled onkeydown="return event.keyCode !== 69">
                             <div id="percent_error_text"> &nbsp;</div><br><br>
-
                             <input type="checkbox" id="split">Split bill between several guests<br>
                             <input type="number" id="numberOFpayes" placeholder="Number of people" min=1 disabled onkeydown="return event.keyCode !== 69">
                             <div id="guestNumber_error_text"> &nbsp;</div><br><br>
                             <button type="submit" class="btn btn-dark">Calculate!</button><br><br>
                             <div id="tip_div"></div>
-
                         </form>
 
                     </div>
@@ -58,11 +60,7 @@
             <p>Oleg Mironov</p>
         </div>
     </div>
-    <!-- <script>
-        
-        
-    </script> -->
-
+    <!-- my main scripts, one for listerers and error handling, another one for calculating tips -->
     <script src="js/form_fields.js" async defer></script>
     <script src="js/calculator.js" async defer></script>
 
