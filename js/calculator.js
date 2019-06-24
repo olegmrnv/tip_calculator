@@ -46,7 +46,7 @@ function tip_calculator() {
 
     // making sure all values entered correctly, displaying error if not 
     // calculating tips and rounding to 2 decimal places, calling badge function
-    if (bill_amount <= 0 || percent < 0 || numberOFpayes < 1) {
+    if (bill_amount <= 0 || percent < 0 || numberOFpayes < 1 || percent == "") {
         alert("Please fill in requared fields");
     } else {
         to_tip = (bill_amount / 100 * percent) / numberOFpayes;

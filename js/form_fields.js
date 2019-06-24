@@ -62,6 +62,9 @@ function valCheckPercentage() {
     if (this.value < 0) {
         this.style.border = "2px solid red";
         document.getElementById('percent_error_text').innerHTML = "Tip percentage cannot be negative";
+    } else if (this.value == "") {
+        this.style.border = "2px solid red";
+        document.getElementById('percent_error_text').innerHTML = "Please enter desired tip percentage";
     } else {
         document.getElementById('percent_error_text').innerHTML = "&nbsp;";
         this.style.border = "";
