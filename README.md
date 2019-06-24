@@ -10,3 +10,5 @@ I thoroughly developed form validation process using listeners. When user naviga
 All of that has been placed in separate JavaScript file "form_fields.js" and it uses plain JavaScript language. 
 File "calculator.js" contains main function, triggered by pressing "Calculate!" button or "Enter" key. 
 Here I check again if values are correct and displaying result along with badge (if applicable), or displaying alert message.
+
+deployed version: https://olegmrnv.github.io/tip_calculator/
