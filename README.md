@@ -12,3 +12,5 @@ File "calculator.js" contains main function, triggered by pressing "Calculate!" 
 Here I check again if values are correct and displaying result along with badge (if applicable), or displaying alert message.
 
 deployed version: https://olegmrnv.github.io/tip_calculator/
+
+![graphs](data/tipCalc.JPG "some of the graphs")
